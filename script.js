@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 });
 
 addBtn.onclick = (e) => {
- // e.preventDefault();
+  // e.preventDefault();
   let getLocalStorage = JSON.parse(localStorage.getItem('listOfBooks'));
   if (getLocalStorage !== null) {
     listOfBooks = [...getLocalStorage];
@@ -29,22 +29,33 @@ addBtn.onclick = (e) => {
   localStorage.setItem('listOfBooks', JSON.stringify(listOfBooks));
 };
 
-function displayBooks () {
+function displayBooks() {
   const tempListofBooks = JSON.parse(localStorage.getItem('listOfBooks'));
   tempListofBooks.forEach((book) => {
-   console.log(book);
-   const bookItem = document.createElement('ul');
-   bookItem.innerHTML = `
+    console.log(book);
+    const bookItem = document.createElement('ul');
+    bookItem.innerHTML = `
      <li> ${book.title} </li>
      <li> ${book.author} </li>
-     <li> <button id="${book.id}"> Remove </button></li> `;
-     //return bookItem;
-     listDiv.appendChild(bookItem);
-  });  
+     <li> <button id="${book.id}" class="removeBtn"> Remove </button></li> `;
+    //return bookItem;
+    listDiv.appendChild(bookItem);
+  });
 }
 
+const removeBtns = document.querySelectorAll('.removeBtn');
 
-displayBooks ();
+function deleteBook() {
+  console.log('clicked');
+}
+
+removeBtns.forEach((btn) => {
+  btn.onclick=(e)=>{
+    console.log('clc')
+  }
+});
+
+displayBooks();
 /* 
 removeEventListener.onclick = () => {
   let getLocalStorage = JSON.parse(localStorage.getItem('listOfBooks'));
