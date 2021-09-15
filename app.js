@@ -1,53 +1,91 @@
-const addBtn = document.querySelector('.addBtn');
-const titleInput = document.querySelector('#title');
-const authorInput = document.querySelector('#author');
-const listDiv = document.querySelector('.listOfBooks');
-
 let bookData = { id: '', title: '', author: '' };
 let listOfBooks = [];
 
-function onAdd(e) {
-  if (localStorage.getItem('listOfBooks') === null) {
-    listOfBooks.push({ title: titleInput.value, author: authorInput.value });
-    localStorage.setItem('listOfBooks', JSON.stringify(listOfBooks));
-    console.log(listOfBooks);
-  } else {
-    listOfBooks = [...JSON.parse(localStorage.getItem('listOfBooks'))];
-    listOfBooks.push({ title: titleInput.value, author: authorInput.value });
-    localStorage.setItem('listOfBooks', JSON.stringify(listOfBooks));
-    console.log(listOfBooks);
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
 }
-addBtn.addEventListener('click', onAdd);
 
-let html = '';
-function generateHtml() {
-  if (localStorage.getItem('listOfBooks') !== null) {
-    // console.log(JSON.parse(localStorage.getItem('listOfBooks')));
-    let booksInStorage = [...JSON.parse(localStorage.getItem('listOfBooks'))];
-    booksInStorage.forEach((book, index) => {
-      html += `
-       <ul>
-       <li> ${book.title} </li>
-       <li> ${book.author} </li>
-       <li> <button id="${book.id}" class="removeBtn" onclick="deleteBook(${index})"> Remove </button></li>
-       </ul>
-       `;
+class UI {
+  static displayBooks() {
+    const storedBooks = Storage.getBooks();
+    storedBooks.forEach((book) => UI.addBookToList(book));
+  }
+
+  static addBookToList(book) {
+    const listDiv = document.querySelector('.listOfBooks');
+    const ul = document.createElement('ul');
+    ul.innerHTML = ` 
+        <li> ${book.title} </li>
+        <li> ${book.author} </li>
+        <li> <button id="${book.id}" class="removeBtn" > Remove </button></li>`;
+    listDiv.appendChild(ul);
+  }
+
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+  }
+
+  static deleteBook(element) {
+    if (element.classList.contains('removeBtn')) {
+      element.parentElement.parentElement.remove();
+    }
+  }
+}
+
+class Storage {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('listOfBooks') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('listOfBooks'));
+    }
+    return books;
+  }
+
+  static addBook(book) {
+    const books = Storage.getBooks();
+    books.push(book);
+    localStorage.setItem('listOfBooks', JSON.stringify(books));
+  }
+
+  static removeBook(bookTitle) {
+    const books = Storage.getBooks();
+    console.log('bookTitle', bookTitle);
+    books.forEach((book, index) => {
+      console.log('book', book.title);
+
+      if (book.title === bookTitle) {
+        console.log('book', book);
+        books.splice(index, 1);
+      }
     });
 
-    listDiv.innerHTML = html;
-  } else {
-    console.log('storage is null');
-    localStorage.setItem('listOfBooks', JSON.stringify(listOfBooks));
+    localStorage.setItem('listOfBooks', JSON.stringify(books));
   }
 }
-generateHtml();
 
-function deleteBook(index) {
-  console.log('clicked');
-  listOfBooks = [...JSON.parse(localStorage.getItem('listOfBooks'))];
-  listOfBooks.splice(index, 1);
-  localStorage.setItem('listOfBooks', JSON.stringify(listOfBooks));
-  window.location.reload();
-}
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
+
+document.querySelector('.addBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const book = new Book(title, author);
+  UI.addBookToList(book);
+  Storage.addBook(book);
+  UI.clearFields();
+});
+
+document.querySelector('.listOfBooks').addEventListener('click', (e) => {
+  UI.deleteBook(e.target);
+  Storage.removeBook(
+    e.target.parentElement.previousElementSibling.previousElementSibling
+      .textContent
+  );
+});
 
