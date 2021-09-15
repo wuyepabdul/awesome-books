@@ -22,3 +22,7 @@ form button {
 body {
   color: black;
 }
+
+.alert {
+  color: rgb(202, 13, 13);
+}
