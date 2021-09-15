@@ -72,14 +72,12 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
 
   if (title.length < 1) {
-    document.querySelector('.alert.title').textContent =
-      'Title cannot be empty';
+    document.querySelector('.alert.title').textContent = 'Title cannot be empty';
     return;
   }
 
   if (author.length < 1) {
-    document.querySelector('.alert.author').textContent =
-      'Author cannot be empty';
+    document.querySelector('.alert.author').textContent = 'Author cannot be empty';
     return;
   }
 
@@ -94,6 +92,6 @@ document.querySelector('.listOfBooks').addEventListener('click', (e) => {
   Storage.removeBook(
     e.target.parentElement.previousElementSibling.previousElementSibling.textContent
       .toString()
-      .trim()
+      .trim(),
   );
 });

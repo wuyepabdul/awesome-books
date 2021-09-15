@@ -41,7 +41,7 @@ section {
 }
 
 .listOfBooks > ul:nth-child(odd) {
-  background-color:  grey;
+  background-color: grey;
 }
 
 .listOfBooks > ul > li {
