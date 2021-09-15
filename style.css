@@ -4,16 +4,24 @@
   box-sizing: border-box;
 }
 
-body {
-  color: black;
-  font-size: 2rem;
-}
-
 * ul li {
   list-style-type: none;
 }
 
+* input {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: black;
+  font-size: 2rem;
+  font-family: cursive;
+}
+
 section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +41,7 @@ section {
 }
 
 .listOfBooks > ul:nth-child(odd) {
-  background-color: grey;
+  background-color:  grey;
 }
 
 .listOfBooks > ul > li {
@@ -44,10 +52,35 @@ section {
   float: right;
 }
 
+.form_container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+}
+
 form input,
 form button {
   display: block;
-  margin: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  height: 3rem;
+  border: 3px solid black;
+}
+
+form input::placeholder {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-family: cursive;
 }
 
 .alert {
@@ -61,4 +94,19 @@ form button {
   font-size: 1rem;
   border: 3px solid black;
   padding: 0.75rem;
+  box-shadow: 10px 10px 10px;
+}
+
+.addBtn {
+  float: right;
+  margin-right: 0;
+}
+
+.separator {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 2px;
+  width: 50%;
+  background-color: black;
+  box-shadow: 5px 5px 5px;
 }
