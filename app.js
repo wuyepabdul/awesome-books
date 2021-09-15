@@ -1,9 +1,10 @@
 /* eslint-disable max-classes-per-file */
 
 class Book {
-  constructor(title, author) {
+  constructor(title, author, bookId) {
     this.title = title;
     this.author = author;
+    this.bookId = bookId;
   }
 }
 
@@ -24,10 +25,11 @@ class Storage {
     localStorage.setItem('listOfBooks', JSON.stringify(books));
   }
 
-  static removeBook(bookTitle) {
+  static removeBook(id) {
+    console.log(id);
     const books = Storage.getBooks();
     books.forEach((book, index) => {
-      if (book.title === bookTitle) {
+      if (book.bookId === id) {
         books.splice(index, 1);
       }
     });
@@ -46,7 +48,7 @@ class UI {
     const ul = document.createElement('ul');
     ul.innerHTML = ` 
       <li> "${book.title}" by ${book.author} </li>
-      <li> <button id="${book.id}" class="removeBtn" > Remove </button></li>`;
+      <li> <button id="${book.bookId}" class="removeBtn" > Remove </button></li>`;
     listDiv.appendChild(ul);
   }
 
@@ -70,7 +72,9 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-
+  const bookId =
+    Math.floor(Math.random() * 1000) + title.replace(/^\s+|\s+$/g, '');
+  console.log(bookId);
   if (title.length < 1) {
     document.querySelector('.alert.title').textContent =
       'Title cannot be empty';
@@ -83,7 +87,7 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
     return;
   }
 
-  const book = new Book(title, author);
+  const book = new Book(title, author, bookId);
   UI.addBookToList(book);
   Storage.addBook(book);
   UI.clearFields();
@@ -91,9 +95,5 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
 
 document.querySelector('.listOfBooks').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
-  Storage.removeBook(
-    e.target.parentElement.previousElementSibling.textContent
-      .toString()
-      .trim()
-  );
+  Storage.removeBook(e.target.id);
 });
