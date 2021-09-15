@@ -32,6 +32,17 @@ section {
   align-items: center;
 }
 
+.listOfBooks > ul:nth-child(odd) {
+  background-color: grey;
+}
+
+.listOfBooks > ul > li {
+  display: inline-block;
+}
+
+.listOfBooks > ul > li:last-child {
+  float: right;
+}
 
 form input,
 form button {
