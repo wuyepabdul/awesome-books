@@ -55,12 +55,16 @@ class Storage {
 
   static removeBook(bookTitle) {
     const books = Storage.getBooks();
-    console.log('bookTitle', bookTitle);
+    //console.log('bookTitle', bookTitle);
     books.forEach((book, index) => {
-      console.log('book', book.title);
+     // console.log('book', book.title);
+     // console.log('type of bookTitle: ' + typeof bookTitle);
+     // console.log('type of book.title: ' + typeof book.title);
 
       if (book.title === bookTitle) {
-        console.log('book', book);
+        console.log('is it true?' + (book.title === bookTitle));
+        console.log('lenght book.title ' + book.title.length + ' lenght bookTitle' + bookTitle.length);
+      //  console.log('book', book);
         books.splice(index, 1);
       }
     });
@@ -82,10 +86,12 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
 });
 
 document.querySelector('.listOfBooks').addEventListener('click', (e) => {
+  //console.log(e.target);
   UI.deleteBook(e.target);
   Storage.removeBook(
     e.target.parentElement.previousElementSibling.previousElementSibling
-      .textContent
+      .textContent.toString().trim()
   );
+  // console.log(e.target.parentElement.previousElementSibling.previousElementSibling
+  //   .textContent.toString().trim());
 });
-
