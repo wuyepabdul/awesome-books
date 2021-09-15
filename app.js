@@ -50,25 +50,21 @@ class Storage {
   static addBook(book) {
     const books = Storage.getBooks();
     books.push(book);
+    listOfBooks = books;
     localStorage.setItem('listOfBooks', JSON.stringify(books));
   }
 
   static removeBook(bookTitle) {
     const books = Storage.getBooks();
-    //console.log('bookTitle', bookTitle);
     books.forEach((book, index) => {
-     // console.log('book', book.title);
-     // console.log('type of bookTitle: ' + typeof bookTitle);
-     // console.log('type of book.title: ' + typeof book.title);
 
       if (book.title === bookTitle) {
         console.log('is it true?' + (book.title === bookTitle));
         console.log('lenght book.title ' + book.title.length + ' lenght bookTitle' + bookTitle.length);
-      //  console.log('book', book);
         books.splice(index, 1);
       }
     });
-
+    listOfBooks = books;
     localStorage.setItem('listOfBooks', JSON.stringify(books));
   }
 }
