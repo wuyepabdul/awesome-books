@@ -92,8 +92,6 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
 document.querySelector('.listOfBooks').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
   Storage.removeBook(
-    e.target.parentElement.previousElementSibling.previousElementSibling.textContent
-      .toString()
-      .trim()
+    e.target.parentElement.previousElementSibling.textContent.toString().trim()
   );
 });
