@@ -6,19 +6,6 @@ const listDiv = document.querySelector('.listOfBooks');
 let bookData = { id: '', title: '', author: '' };
 let listOfBooks = [];
 
-class Books {
-    constructor(title,author){
-        this.title=title;
-        this.author=author;
-    }
-} 
-
-class UI{
-    static displayBooks (){
-        
-    }
-}
-
 function onAdd(e) {
   if (localStorage.getItem('listOfBooks') === null) {
     listOfBooks.push({ title: titleInput.value, author: authorInput.value });
