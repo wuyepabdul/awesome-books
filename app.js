@@ -45,9 +45,8 @@ class UI {
     const listDiv = document.querySelector('.listOfBooks');
     const ul = document.createElement('ul');
     ul.innerHTML = ` 
-        <li> ${book.title} </li>
-        <li> ${book.author} </li>
-        <li> <button id="${book.id}" class="removeBtn" > Remove </button></li>`;
+      <li> "${book.title}" by ${book.author} </li>
+      <li> <button id="${book.id}" class="removeBtn" > Remove </button></li>`;
     listDiv.appendChild(ul);
   }
 
@@ -73,12 +72,14 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
 
   if (title.length < 1) {
-    document.querySelector('.alert.title').textContent = 'Title cannot be empty';
+    document.querySelector('.alert.title').textContent =
+      'Title cannot be empty';
     return;
   }
 
   if (author.length < 1) {
-    document.querySelector('.alert.author').textContent = 'Author cannot be empty';
+    document.querySelector('.alert.author').textContent =
+      'Author cannot be empty';
     return;
   }
 
@@ -90,6 +91,9 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
 
 document.querySelector('.listOfBooks').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
-  Storage.removeBook(e.target.parentElement.previousElementSibling.previousElementSibling
-    .textContent.toString().trim());
+  Storage.removeBook(
+    e.target.parentElement.previousElementSibling.previousElementSibling.textContent
+      .toString()
+      .trim()
+  );
 });

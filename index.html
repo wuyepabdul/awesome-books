@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
-</head>
-
-<body>
-  <h1>Awesome Books</h1>
-  <section>
-    <div class="listOfBooks"></div>
-
-    <div>
-      <form>
-        <div>
-          <label for="title"></label>
-          <input type="text" name="title" id="title" placeholder="Title" />
-          <small class="alert title"></small>
-        </div>
-        <div>
-          <label for="author"></label>
-          <input type="text" name="author  " id="author" placeholder="Author" />
-          <small class="alert author"></small>
-        </div>
-        <button type="submit" class="addBtn">Add</button>
-      </form>
-    </div>
-  </section>
-  <script src="./app.js"></script>
-</body>
-
+  <body>
+    <section>
+      <h1>Awesome Books</h1>
+      <div class="listOfBooks"></div>
+      <div class="form_container">
+        <div class="separator"></div>
+        <h2>Add a New Book</h2>
+        <form>
+          <div>
+            <label for="title"></label>
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <small class="alert title"></small>
+          </div>
+          <div>
+            <label for="author"></label>
+            <input
+              type="text"
+              name="author  "
+              id="author"
+              placeholder="Author"
+            />
+            <small class="alert author"></small>
+          </div>
+          <button type="submit" class="addBtn">Add</button>
+        </form>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
 </html>

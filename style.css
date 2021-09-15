@@ -4,14 +4,34 @@
   box-sizing: border-box;
 }
 
+body {
+  color: black;
+  font-size: 2rem;
+}
+
 * ul li {
   list-style-type: none;
 }
 
-.listOfBooks > ul {
-  border-bottom: 1px solid grey;
-  padding-bottom: 0.5rem;
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.listOfBooks {
+  width: 95%;
+  border: 3px solid black;
+  margin-top: 1.5rem;
+}
+
+.listOfBooks > ul {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 form input,
 form button {
@@ -19,10 +39,15 @@ form button {
   margin: 0.5rem;
 }
 
-body {
-  color: black;
-}
-
 .alert {
   color: rgb(202, 13, 13);
+}
+
+.removeBtn,
+.addBtn {
+  color: black;
+  background-color: white;
+  font-size: 1rem;
+  border: 3px solid black;
+  padding: 0.75rem;
 }
