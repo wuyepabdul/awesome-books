@@ -26,7 +26,6 @@ class Storage {
   }
 
   static removeBook(id) {
-    console.log(id);
     const books = Storage.getBooks();
     books.forEach((book, index) => {
       if (book.bookId === id) {
@@ -72,18 +71,14 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  const bookId =
-    Math.floor(Math.random() * 1000) + title.replace(/^\s+|\s+$/g, '');
-  console.log(bookId);
+  const bookId = Math.floor(Math.random() * 1000) + title.replace(/^\s+|\s+$/g, '');
   if (title.length < 1) {
-    document.querySelector('.alert.title').textContent =
-      'Title cannot be empty';
+    document.querySelector('.alert.title').textContent = 'Title cannot be empty';
     return;
   }
 
   if (author.length < 1) {
-    document.querySelector('.alert.author').textContent =
-      'Author cannot be empty';
+    document.querySelector('.alert.author').textContent = 'Author cannot be empty';
     return;
   }
 
