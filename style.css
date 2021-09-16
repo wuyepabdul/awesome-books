@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* a {
+  text-decoration: none;
+}
+
 * ul li {
   list-style-type: none;
 }
@@ -14,18 +18,55 @@
 }
 
 body {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
   font-size: 2rem;
   font-family: cursive;
 }
 
-section {
+header {
+  position: fixed;
+  height: 3rem;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+
+header nav {  
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; 
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between ;
+  gap: 1rem;
+}
+
+.navItem {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-right: 1px solid grey;
+}
+
+.navItem:last-child {
+  border-right: none;
+}
+
+main {
+  width: 100%;
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .listOfBooks {
   width: 95%;
@@ -109,4 +150,19 @@ form input::placeholder {
   width: 50%;
   background-color: black;
   box-shadow: 5px 5px 5px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
