@@ -17,6 +17,11 @@
   padding: 0;
 }
 
+* h1, h2 {
+  margin: 0;
+  text-align: center;
+}
+
 body {
   height: 95vh;
   display: flex;
@@ -24,16 +29,20 @@ body {
   align-items: center;
   color: black;
   font-size: 2rem;
-  font-family: cursive;
+  font-family: monospace;
 }
 
 header {
   position: fixed;
-  height: 3rem;
   top: 0;
   width: 100%;
   background-color: white;
   z-index: 10;
+  box-shadow: 0rem -1rem 3rem 2px
+}
+
+.page_logo {
+  font-weight: 900;
 }
 
 header nav {
@@ -67,15 +76,11 @@ main {
   align-items: center;
 }
 
-.listOfBooksContainer{ 
+.listOfBooksContainer {
   width: 95%;
   margin-top: 1.5rem;
 }
 
-.listOfBooksContainer h1 {
-  width: 50%;
-  margin: 0 auto;
-}
 
 .listOfBooks {
   width: 95%;
@@ -153,13 +158,22 @@ form input::placeholder {
   margin-right: 0;
 }
 
-.separator {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  height: 2px;
-  width: 50%;
-  background-color: black;
-  box-shadow: 5px 5px 5px;
+.contact_section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.contact_info {
+  padding:3rem 0;
+}
+
+.contact_section ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 6rem; 
 }
 
 footer {
