@@ -10,11 +10,34 @@
 </head>
 
 <body>
-  <section>
-    <h1>Awesome Books</h1>
-    <div class="listOfBooks"></div>
-    <div class="form_container">
-      <div class="separator"></div>
+  <header>
+    <nav>
+      <div class="page_logo">
+        Awesome Books
+      </div>
+      <ul class="navigation">
+        <li class="navItem">
+          <a class="activeLink" href="#listOfBooks_container">List</a>
+        </li>
+        <li class="navItem inactive">
+          <a class="inactive" href="#form_container">Add new</a>
+        </li>
+        <li class="navItem inactive">
+          <a class="inactive" href="#contact_section">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="date">
+      <p id="now"></p>
+    </section>
+    <section id="listOfBooks_container" class="listOfBooks_container visible">
+      <h1>Awesome Books</h1>
+      <div id="listOfBooks" class="listOfBooks"></div>
+
+    </section>
+    <section id="form_container" class="form_container invisible">
       <h2>Add a New Book</h2>
       <form>
         <div>
@@ -29,9 +52,27 @@
         </div>
         <button type="submit" class="addBtn">Add</button>
       </form>
-    </div>
-  </section>
-  <script src="./app.js"></script>
+    </section>
+    <section id="contact_section" class="contact_section invisible">
+      <h2>Contact Information</h2>
+      <p class="contact_info">Do you have any questions or you just want to say "Hello"?
+        You can reach out to us!
+      </p>
+      <ul>
+        <li>Our e-mail: mail@mail.com</li>
+        <li>Our phone number: 555 55 55 55 55</li>
+        <li>Owr address: Our Streetname, 22 - 12345 Townville Country</li>
+      </ul>
+
+    </section>
+  </main>
+  <footer>
+    <p>Copyright&copy; Reservered</p>
+    <p>Lorem   amet, consectetur adipisicing elit. Porro, odit.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/navigation.js"></script>
 </body>
 
 </html>
