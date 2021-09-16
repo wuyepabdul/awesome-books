@@ -6,6 +6,7 @@
 
 * a {
   text-decoration: none;
+  color: black;
 }
 
 * ul li {
@@ -17,52 +18,42 @@
   padding: 0;
 }
 
-* h1,
-h2 {
-  margin: 0;
-  text-align: center;
-}
-
 body {
+  position: relative;
   height: 95vh;
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
   color: black;
   font-size: 2rem;
-  font-family: monospace;
-  /* flex-direction: column; */
+  font-family: cursive;
+}
+
+h1,
+h2 {
+  text-align: center;
 }
 
 header {
   position: fixed;
+  height: 4.5rem;
   top: 0;
   width: 100%;
   background-color: white;
-  z-index: 10;
   box-shadow: 0rem -1rem 3rem 2px;
+  z-index: 10;
+}
+
+header nav {  
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; 
 }
 
 .page_logo {
   font-weight: 900;
 }
 
-header nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-/* 
-section {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-} */
-
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between ;
   gap: 1rem;
 }
 
@@ -70,31 +61,40 @@ section {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   border-right: 1px solid grey;
+  border-bottom: none;
 }
 
 .navItem:last-child {
   border-right: none;
 }
 
-main {
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  /* flex-direction: column; */
-  height: 100%;
-  align-items: center;
-  position: relative;
-  top: 4.5rem;
+.navItem a.inactive {
+  border-bottom: 3px solid transparent;
+  transition: 600ms ease-in-out;
 }
 
-.listOfBooksContainer {
-  width: 95%;
-  margin-top: 1.5rem;
+.navItem a.activeLink {
+  border-bottom: 3px solid blue;
+  transition: 600ms ease-in-out;
+}
+
+main {
+  width: 100%;
+  position: relative;
+  top: 4.5rem;
+  height: calc(100vh - 9rem);
+  overflow-y: scroll;
+} 
+
+.listOfBooks_container {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
 }
 
 .listOfBooks {
-  width: 95%;
-  margin: 0 auto;
   border: 3px solid black;
   margin-top: 1.5rem;
 }
@@ -118,8 +118,15 @@ main {
   float: right;
 }
 
+.form_container,
+.contact_section {  
+  position: relative;
+  top: 40%; right: 50%;
+  transform: translate(50%,-50%);
+}
+
 .form_container {
-  width: 60%;
+  padding: 0 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,36 +176,26 @@ form input::placeholder {
 }
 
 .contact_section {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-  align-items: center;
+  padding: 0 4rem;
 }
 
-.contact_info {
+.contact_section p.contact_info {
   padding: 3rem 0;
 }
 
 .contact_section ul li {
-  list-style-type: disc;
-  list-style-position: inside;
+  list-style: circle;
   padding-left: 6rem;
+  list-style-position: inside;
 }
 
 footer {
-  z-index: 10;
-  background-color: blue;
-  /*
-  position: -webkit-sticky; 
-  position: sticky;
-  bottom: 0; */
-
   position: fixed;
-bottom: 0;
+  height: 4.5rem;
+  bottom: 0;
   width: 100%;
-  padding: 1rem 3rem;
-  display: flex;
+  background-color: white;
+  z-index: 10;
 }
 
 .invisible {
