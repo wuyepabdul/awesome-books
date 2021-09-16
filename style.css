@@ -17,19 +17,21 @@
   padding: 0;
 }
 
-* h1, h2 {
+* h1,
+h2 {
   margin: 0;
   text-align: center;
 }
 
 body {
   height: 95vh;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   color: black;
   font-size: 2rem;
   font-family: monospace;
+  /* flex-direction: column; */
 }
 
 header {
@@ -38,7 +40,7 @@ header {
   width: 100%;
   background-color: white;
   z-index: 10;
-  box-shadow: 0rem -1rem 3rem 2px
+  box-shadow: 0rem -1rem 3rem 2px;
 }
 
 .page_logo {
@@ -50,6 +52,13 @@ header nav {
   justify-content: space-between;
   padding: 1rem;
 }
+/* 
+section {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+} */
 
 .navigation {
   display: flex;
@@ -71,16 +80,17 @@ main {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  height: 100%;
   align-items: center;
+  position: relative;
+  top: 4.5rem;
 }
 
 .listOfBooksContainer {
   width: 95%;
   margin-top: 1.5rem;
 }
-
 
 .listOfBooks {
   width: 95%;
@@ -167,19 +177,28 @@ form input::placeholder {
 }
 
 .contact_info {
-  padding:3rem 0;
+  padding: 3rem 0;
 }
 
 .contact_section ul li {
   list-style-type: disc;
   list-style-position: inside;
-  padding-left: 6rem; 
+  padding-left: 6rem;
 }
 
 footer {
+  z-index: 10;
+  background-color: blue;
+  /*
+  position: -webkit-sticky; 
+  position: sticky;
+  bottom: 0; */
+
   position: fixed;
-  bottom: 0;
+bottom: 0;
   width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
 }
 
 .invisible {
