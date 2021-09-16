@@ -5,7 +5,6 @@ const nowParagraph = document.getElementById('now');
 
 const { DateTime } = luxon;
 const now = DateTime.now();
-console.log(now);
 nowParagraph.textContent = now.toLocaleString(DateTime.DATETIME_MED);
 
 navigationLinks.forEach((navlink) => {
