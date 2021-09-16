@@ -1,6 +1,12 @@
 const navigationLinks = document.querySelectorAll('.navItem');
 const sections = document.querySelectorAll('section');
 const anchors = document.querySelectorAll('.navigation a');
+const nowParagraph = document.getElementById('now');
+
+const { DateTime } = luxon;
+const now = DateTime.now();
+console.log(now);
+nowParagraph.textContent = now.toLocaleString(DateTime.DATETIME_MED);
 
 navigationLinks.forEach((navlink) => {
   navlink.addEventListener('click', (e) => {

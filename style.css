@@ -41,10 +41,10 @@ header {
   z-index: 10;
 }
 
-header nav {  
+header nav {
   display: flex;
   justify-content: space-between;
-  padding: 1rem; 
+  padding: 1rem;
 }
 
 .page_logo {
@@ -53,7 +53,7 @@ header nav {
 
 .navigation {
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -84,7 +84,11 @@ main {
   top: 4.5rem;
   height: calc(100vh - 9rem);
   overflow-y: scroll;
-} 
+}
+
+.date {
+  text-align: right;
+}
 
 .listOfBooks_container {
   position: relative;
@@ -119,10 +123,11 @@ main {
 }
 
 .form_container,
-.contact_section {  
+.contact_section {
   position: relative;
-  top: 40%; right: 50%;
-  transform: translate(50%,-50%);
+  top: 40%;
+  right: 50%;
+  transform: translate(50%, -50%);
 }
 
 .form_container {
@@ -196,6 +201,11 @@ footer {
   width: 100%;
   background-color: white;
   z-index: 10;
+}
+
+footer p {
+ padding-left: 2rem;
+ font-size: 1.5rem;
 }
 
 .invisible {

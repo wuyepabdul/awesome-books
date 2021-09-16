@@ -92,3 +92,7 @@ document.querySelector('.listOfBooks').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
   Storage.removeBook(e.target.id);
 });
+
+function printout (){
+  console.log('hii')
+}

@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script data-main="scripts/main" src="./scripts/require.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
-</head>
+  <body>
+    <header>
+      <nav>
+        <div class="page_logo">Awesome Books</div>
+        <ul class="navigation">
+          <li class="navItem">
+            <a class="activeLink" href="#listOfBooks_container">List</a>
+          </li>
+          <li class="navItem inactive">
+            <a class="inactive" href="#form_container">Add new</a>
+          </li>
+          <li class="navItem inactive">
+            <a class="inactive" href="#contact_section">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="date">
+        <p id="now"></p>
+      </section>
 
-<body>
-  <header>
-    <nav>
-      <div class="page_logo">
-        Awesome Books
-      </div>
-      <ul class="navigation">
-        <li class="navItem">
-          <a class="activeLink" href="#listOfBooks_container">List</a>
-        </li>
-        <li class="navItem inactive">
-          <a class="inactive" href="#form_container">Add new</a>
-        </li>
-        <li class="navItem inactive">
-          <a class="inactive" href="#contact_section">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="listOfBooks_container" class="listOfBooks_container visible">
-      <h1>Awesome Books</h1>
-      <div id="listOfBooks" class="listOfBooks"></div>
-
-    </section>
-    <section id="form_container" class="form_container invisible">
-      <h2>Add a New Book</h2>
-      <form>
-        <div>
-          <label for="title"></label>
-          <input type="text" name="title" id="title" placeholder="Title" />
-          <small class="alert title"></small>
-        </div>
-        <div>
-          <label for="author"></label>
-          <input type="text" name="author  " id="author" placeholder="Author" />
-          <small class="alert author"></small>
-        </div>
-        <button type="submit" class="addBtn">Add</button>
-      </form>
-    </section>
-    <section id="contact_section" class="contact_section invisible">
-      <h2>Contact Information</h2>
-      <p class="contact_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Sit reprehenderit quidem id ex eaque consequuntur recusandae qui natus.
-        Similique, ipsam.
-      </p>
-      <ul>
-        <li>email</li>
-        <li>phone</li>
-        <li>addressText</li>
-      </ul>
-
-    </section>
-  </main>
-  <footer>
-    FOOTER
-  </footer>
-  <script src="./app.js"></script>
-  <script src="navigation.js"></script>
-</body>
-
+      <section id="listOfBooks_container" class="listOfBooks_container visible">
+        <h1>Awesome Books</h1>
+        <div id="listOfBooks" class="listOfBooks"></div>
+      </section>
+      <section id="form_container" class="form_container invisible">
+        <h2>Add a New Book</h2>
+        <form>
+          <div>
+            <label for="title"></label>
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <small class="alert title"></small>
+          </div>
+          <div>
+            <label for="author"></label>
+            <input
+              type="text"
+              name="author  "
+              id="author"
+              placeholder="Author"
+            />
+            <small class="alert author"></small>
+          </div>
+          <button type="submit" class="addBtn">Add</button>
+        </form>
+      </section>
+      <section id="contact_section" class="contact_section invisible">
+        <h2>Contact Information</h2>
+        <p class="contact_info">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
+          reprehenderit quidem id ex eaque consequuntur recusandae qui natus.
+          Similique, ipsam.
+        </p>
+        <ul>
+          <li>email</li>
+          <li>phone</li>
+          <li>addressText</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright&copy Reservered</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
+    <script src="./scripts//app.js"></script>
+    <script src="./scripts/navigation.js"></script>
+  </body>
 </html>
