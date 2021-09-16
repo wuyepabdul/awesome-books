@@ -40,7 +40,7 @@ header {
   top: 0;
   width: 100%;
   background-color: white;
-  box-shadow: 0rem -1rem 3rem 2px;
+  box-shadow: 0 -1rem 3rem 2px;
   z-index: 10;
 }
 
@@ -49,7 +49,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem; 
+  padding: 2rem;
 }
 
 .page_logo {
@@ -58,7 +58,7 @@ header nav {
 
 .navigation {
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -97,7 +97,7 @@ main {
   top: 4.5rem;
   height: calc(100vh - 9rem);
   overflow-y: scroll;
-} 
+}
 
 .listOfBooks_container {
   position: relative;
@@ -127,15 +127,22 @@ main {
   display: inline-block;
 }
 
+.contact_section ul li {
+  list-style: circle;
+  padding-left: 6rem;
+  list-style-position: inside;
+}
+
 .listOfBooks > ul > li:last-child {
   float: right;
 }
 
 .form_container,
-.contact_section {  
+.contact_section {
   position: relative;
-  top: 40%; right: 50%;
-  transform: translate(50%,-50%);
+  top: 40%;
+  right: 50%;
+  transform: translate(50%, -50%);
 }
 
 .form_container {
@@ -194,12 +201,6 @@ form input::placeholder {
 
 .contact_section p.contact_info {
   padding: 3rem 0;
-}
-
-.contact_section ul li {
-  list-style: circle;
-  padding-left: 6rem;
-  list-style-position: inside;
 }
 
 footer {
