@@ -33,6 +33,9 @@ h2 {
 
 header {
   position: fixed;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
   height: 4.5rem;
   top: 0;
   width: 100%;
@@ -42,9 +45,11 @@ header {
 }
 
 header nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 2rem; 
 }
 
 .page_logo {
@@ -53,7 +58,7 @@ header nav {
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between ;
   gap: 1rem;
 }
 
@@ -69,13 +74,21 @@ header nav {
 }
 
 .navItem a.inactive {
+  color: black;
   border-bottom: 3px solid transparent;
   transition: 600ms ease-in-out;
 }
 
 .navItem a.activeLink {
+  color: blue;
   border-bottom: 3px solid blue;
   transition: 600ms ease-in-out;
+}
+
+.date {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
 }
 
 main {
@@ -84,11 +97,7 @@ main {
   top: 4.5rem;
   height: calc(100vh - 9rem);
   overflow-y: scroll;
-}
-
-.date {
-  text-align: right;
-}
+} 
 
 .listOfBooks_container {
   position: relative;
@@ -123,11 +132,10 @@ main {
 }
 
 .form_container,
-.contact_section {
+.contact_section {  
   position: relative;
-  top: 40%;
-  right: 50%;
-  transform: translate(50%, -50%);
+  top: 40%; right: 50%;
+  transform: translate(50%,-50%);
 }
 
 .form_container {
@@ -181,7 +189,7 @@ form input::placeholder {
 }
 
 .contact_section {
-  padding: 0 4rem;
+  padding: 0 8rem;
 }
 
 .contact_section p.contact_info {
@@ -196,16 +204,16 @@ form input::placeholder {
 
 footer {
   position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 4.5rem;
   bottom: 0;
-  width: 100%;
+  padding: 2rem;
   background-color: white;
+  box-shadow: inset 0 0.5rem 2rem -1rem;
   z-index: 10;
-}
-
-footer p {
- padding-left: 2rem;
- font-size: 1.5rem;
 }
 
 .invisible {
