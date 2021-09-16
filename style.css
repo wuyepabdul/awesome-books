@@ -36,15 +36,15 @@ header {
   z-index: 10;
 }
 
-header nav {  
+header nav {
   display: flex;
   justify-content: space-between;
-  padding: 1rem; 
+  padding: 1rem;
 }
 
 .navigation {
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -67,9 +67,19 @@ main {
   align-items: center;
 }
 
+.listOfBooksContainer{ 
+  width: 95%;
+  margin-top: 1.5rem;
+}
+
+.listOfBooksContainer h1 {
+  width: 50%;
+  margin: 0 auto;
+}
 
 .listOfBooks {
   width: 95%;
+  margin: 0 auto;
   border: 3px solid black;
   margin-top: 1.5rem;
 }
@@ -156,7 +166,6 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-
 }
 
 .invisible {

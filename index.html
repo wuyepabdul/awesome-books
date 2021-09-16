@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
-</head>
-
-<body>
-  <header>
-    <nav>
-      <div class="page_logo">
-        Awesome Books
-      </div>
-      <ul class="navigation">
-        <li class="navItem">
-          <a href="#listOfBooks">List</a>
-        </li>
-        <li class="navItem">
-          <a href="#form_container">Add new</a>
-        </li>
-        <li class="navItem">
-          <a href="#contact_section">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="listOfBooks" class="listOfBooks visible">
-      <h1>Awesome Books</h1>
-
-    </section>
-    <section id="form_container" class="form_container invisible">
-      <h2>Add a New Book</h2>
-      <form>
-        <div>
-          <label for="title"></label>
-          <input type="text" name="title" id="title" placeholder="Title" />
-          <small class="alert title"></small>
-        </div>
-        <div>
-          <label for="author"></label>
-          <input type="text" name="author  " id="author" placeholder="Author" />
-          <small class="alert author"></small>
-        </div>
-        <button type="submit" class="addBtn">Add</button>
-      </form>
-    </section>
-    <section id="contact_section" class="contact_section invisible">
-      <h2>Contact Information</h2>
-      <p class="contact_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Sit reprehenderit quidem id ex eaque consequuntur recusandae qui natus.
-        Similique, ipsam.
-      </p>
-      <ul>
-        <li>email</li>
-        <li>phone</li>
-        <li>addressText</li>
-      </ul>
-
-    </section>
-  </main>
-  <footer>
-    FOOTER
-  </footer>
-  <script src="./app.js"></script>
-  <script src="navigation.js"></script>
-</body>
-
+  <body>
+    <header>
+      <nav>
+        <div class="page_logo">Awesome Books</div>
+        <ul class="navigation">
+          <li class="navItem">
+            <a href="#listOfBooksContainer">List</a>
+          </li>
+          <li class="navItem">
+            <a href="#form_container">Add new</a>
+          </li>
+          <li class="navItem">
+            <a href="#contact_section">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="listOfBooksContainer visible" id="listOfBooksContainer">
+        <h1>Awesome Books</h1>
+        <div id="listOfBooks" class="listOfBooks"></div>
+      </section>
+      <section id="form_container" class="form_container invisible">
+        <h2>Add a New Book</h2>
+        <form>
+          <div>
+            <label for="title"></label>
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <small class="alert title"></small>
+          </div>
+          <div>
+            <label for="author"></label>
+            <input
+              type="text"
+              name="author  "
+              id="author"
+              placeholder="Author"
+            />
+            <small class="alert author"></small>
+          </div>
+          <button type="submit" class="addBtn">Add</button>
+        </form>
+      </section>
+      <section id="contact_section" class="contact_section invisible">
+        <h2>Contact Information</h2>
+        <p class="contact_info">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
+          reprehenderit quidem id ex eaque consequuntur recusandae qui natus.
+          Similique, ipsam.
+        </p>
+        <ul>
+          <li>email</li>
+          <li>phone</li>
+          <li>addressText</li>
+        </ul>
+      </section>
+    </main>
+    <footer>FOOTER</footer>
+    <script src="./app.js"></script>
+    <script src="navigation.js"></script>
+  </body>
 </html>
