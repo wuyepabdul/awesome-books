@@ -89,6 +89,7 @@ document.querySelector('.addBtn').addEventListener('click', (e) => {
 });
 
 document.querySelector('.listOfBooks').addEventListener('click', (e) => {
+  console.log(e.target)
   UI.deleteBook(e.target);
   Storage.removeBook(e.target.id);
 });
